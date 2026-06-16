@@ -31,15 +31,6 @@ public class Triangle extends Shape {
         return a + b + c;
     }
 
-    @Override
-    public void printResult() {
-        System.out.println("Side A: " + this.a);
-        System.out.println("Side B: " + this.b);
-        System.out.println("Side C: " + this.c);
-        System.out.println("Area: " + getArea());
-        System.out.println("Perimeter: " + getPerimeter());
-    }
-
     public double getA() {
         return a;
     }

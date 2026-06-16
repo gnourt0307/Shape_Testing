@@ -25,12 +25,4 @@ public class Rectangle extends Shape {
         return 2 * (width + length);
     }
 
-    @Override
-    public void printResult() {
-        System.out.println("Width: " + width);
-        System.out.println("Length: " + length);
-        System.out.println("Area: " + getArea());
-        System.out.println("Perimeter: " + getPerimeter());
-    }
-
 }
