@@ -15,7 +15,8 @@ public class TriangleTest {
     @Test
     public void testGetArea() {
         double rs = triangle.getArea();
-        assertTrue(Double.isNaN(rs));
+        double expected = 6;
+        assertEquals(expected, rs, 0.0001);
     }
 
     @Test
