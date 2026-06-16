@@ -1,0 +1,32 @@
+# IntelliJ IDEA
+
+.idea/
+*.iml
+
+# Build output
+
+out/
+target/
+
+# NetBeans generated files
+
+nbproject/private/
+build/
+dist/
+
+# Logs
+
+*.log
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Maven
+
+.mvn/wrapper/maven-wrapper.jar
+
+# JaCoCo reports
+
+jacoco.exec
