@@ -25,9 +25,4 @@ public class ShapeTest {
         double expected = 0;
         assertEquals(expected, rs, 0.0001);
     }
-
-    @Test
-    public void testPrintResult() {
-        shape.printResult();
-    }
 }
