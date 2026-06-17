@@ -5,7 +5,7 @@ package shape;
  *
  * @author THAYCACAC
  */
-public class Rectangle extends Shape {
+public class Rectangle{
 
     private double width;
     private double length;
@@ -23,17 +23,14 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
-    @Override
     public double getArea() {
         return width * length;
     }
 
-    @Override
     public double getPerimeter() {
         return 2 * (width + length);
     }
 
-    @Override
     public double getVolume() {
         return width * length * height;
     }
@@ -67,33 +64,5 @@ public class Rectangle extends Shape {
             return false;
         }
         return true;
-    }
-
-    public double getDiagonal() {
-        return Math.sqrt(width * width + length * length);
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
     }
 }

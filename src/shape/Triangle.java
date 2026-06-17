@@ -5,16 +5,13 @@ package shape;
  *
  * @author THAYCACAC
  */
-public class Triangle extends Shape {
+public class Triangle {
 
     private double a;
     private double b;
     private double c;
     private double height;
 
-    public Triangle() {
-        this.height = 1;
-    }
 
     public Triangle(double a, double b, double c) {
         this.a = a;
@@ -30,18 +27,15 @@ public class Triangle extends Shape {
         this.height = height;
     }
 
-    @Override
     public double getArea() {
         double p = (a + b + c) / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
-    @Override
     public double getPerimeter() {
         return a + b + c;
     }
 
-    @Override
     public double getVolume() {
         return getArea() * height;
     }
@@ -132,37 +126,4 @@ public class Triangle extends Shape {
         }
         return "Acute Scalene";
     }
-
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public void setB(double b) {
-        this.b = b;
-    }
-
-    public double getC() {
-        return c;
-    }
-
-    public void setC(double c) {
-        this.c = c;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
 }

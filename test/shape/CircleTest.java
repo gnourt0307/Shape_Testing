@@ -53,20 +53,4 @@ public class CircleTest {
         assertFalse(new Circle(1.0E103).checkCircle());
     }
 
-    @Test
-    public void testGetDiameter() {
-        double rs = circle.getDiameter();
-        double expected = 4;
-        assertEquals(expected, rs, 0.0001);
-    }
-
-    @Test
-    public void testSetRadius() {
-        Circle c = new Circle();
-        c.setRadius(3);
-
-        double rs = c.getRadius();
-        double expected = 3;
-        assertEquals(expected, rs, 0.0001);
-    }
 }

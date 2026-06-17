@@ -54,27 +54,7 @@ public class RectangleTest {
         assertFalse(new Rectangle(-4, -5).checkRectangle());
     }
 
-    @Test
-    public void testGetDiagonal() {
-        Rectangle r = new Rectangle(3, 4);
-        double rs = r.getDiagonal();
-        double expected = 5;
-        assertEquals(expected, rs, 0.0001);
-    }
 
-    @Test
-    public void testSetSide() {
-        Rectangle r = new Rectangle(0, 0);
-        r.setWidth(6);
-        r.setLength(8);
-        r.setHeight(10);
 
-        double expectedWidth = 6;
-        double expectedLength = 8;
-        double expectedHeight = 10;
 
-        assertEquals(expectedWidth, r.getWidth(), 0.0001);
-        assertEquals(expectedLength, r.getLength(), 0.0001);
-        assertEquals(expectedHeight, r.getHeight(), 0.0001);
-    }
 }

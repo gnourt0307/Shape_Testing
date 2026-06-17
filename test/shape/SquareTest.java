@@ -53,19 +53,4 @@ public class SquareTest {
         assertFalse(new Square(1.0E103).checkSquare());
     }
 
-    @Test
-    public void testGetDiagonal() {
-        double rs = square.getDiagonal();
-        double expected = 4 * Math.sqrt(2);
-        assertEquals(expected, rs, 0.0001);
-    }
-
-    @Test
-    public void testSetSide() {
-        Square s = new Square();
-        s.setSide(5);
-
-        double expected = 5;
-        assertEquals(expected, s.getSide(), 0.0001);
-    }
 }

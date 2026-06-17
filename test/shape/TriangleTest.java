@@ -75,22 +75,4 @@ public class TriangleTest {
         assertEquals("Invalid", new Triangle(3, -1, 4).getType());
     }
 
-    @Test
-    public void testSetSide() {
-        Triangle t = new Triangle();
-        t.setA(6);
-        t.setB(8);
-        t.setC(10);
-        t.setHeight(12);
-
-        double expectedA = 6;
-        double expectedB = 8;
-        double expectedC = 10;
-        double expectedHeight = 12;
-
-        assertEquals(expectedA, t.getA(), 0.0001);
-        assertEquals(expectedB, t.getB(), 0.0001);
-        assertEquals(expectedC, t.getC(), 0.0001);
-        assertEquals(expectedHeight, t.getHeight(), 0.0001);
-    }
 }
