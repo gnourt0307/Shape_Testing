@@ -114,23 +114,13 @@ public class Triangle extends Shape {
         double otherSquares = side1 * side1 + side2 * side2;
 
         if (Math.abs(longestSquare - otherSquares) < 0.0001) {
-            if (isIsosceles) {
-                return "Right Isosceles";
-            }
-            return "Right Scalene";
-        }
-
-        if (longestSquare > otherSquares) {
-            if (isIsosceles) {
-                return "Obtuse Isosceles";
-            }
-            return "Obtuse Scalene";
+            return "Right";
         }
 
         if (isIsosceles) {
-            return "Acute Isosceles";
+            return "Isosceles";
         }
-        return "Acute Scalene";
+        return "Scalene";
     }
 
     public double getA() {
