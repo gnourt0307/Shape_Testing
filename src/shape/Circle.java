@@ -24,6 +24,19 @@ public class Circle extends Shape {
         return Math.PI * 2 * radius;
     }
 
+    @Override
+    public double getVolume() {
+        return 4.0 / 3 * Math.PI * radius * radius * radius;
+    }
+
+    public boolean checkCircle() {
+        return radius > 0;
+    }
+
+    public double getDiameter() {
+        return 2 * radius;
+    }
+
     public double getRadius() {
         return radius;
     }

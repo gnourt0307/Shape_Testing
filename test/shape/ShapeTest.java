@@ -25,4 +25,11 @@ public class ShapeTest {
         double expected = 0;
         assertEquals(expected, rs, 0.0001);
     }
+
+    @Test
+    public void testGetVolume() {
+        double rs = shape.getVolume();
+        double expected = 0;
+        assertEquals(expected, rs, 0.0001);
+    }
 }
