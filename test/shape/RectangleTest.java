@@ -49,19 +49,6 @@ public class RectangleTest {
     }
 
     @Test
-    public void testCheckSquare() {
-        assertTrue(new Rectangle(4, 4).checkSquare());
-    }
-
-    @Test
-    public void testCheckSquareFalse() {
-        assertFalse(rectangle.checkSquare());
-        assertFalse(new Rectangle(0, 0).checkSquare());
-        assertFalse(new Rectangle(4, 0).checkSquare());
-        assertFalse(new Rectangle(-4, -4).checkSquare());
-    }
-
-    @Test
     public void testGetDiagonal() {
         Rectangle r = new Rectangle(3, 4);
         double rs = r.getDiagonal();

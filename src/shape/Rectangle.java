@@ -42,10 +42,6 @@ public class Rectangle extends Shape {
         return width > 0 && length > 0 && height > 0;
     }
 
-    public boolean checkSquare() {
-        return width > 0 && length > 0 && width == length;
-    }
-
     public double getDiagonal() {
         return Math.sqrt(width * width + length * length);
     }
