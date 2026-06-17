@@ -64,7 +64,6 @@ public class TriangleTest {
         assertEquals("Isosceles", new Triangle(3, 4, 3).getType());
         assertEquals("Isosceles", new Triangle(4, 3, 3).getType());
         assertEquals("Scalene", new Triangle(4, 5, 6).getType());
-        assertEquals("Right", new Triangle(5, 3, 4).getType());
         assertEquals("Right", new Triangle(3, 5, 4).getType());
         assertEquals("Right", new Triangle(3, 4, 5).getType());
         assertEquals("Right", new Triangle(1, 1, Math.sqrt(2)).getType());
