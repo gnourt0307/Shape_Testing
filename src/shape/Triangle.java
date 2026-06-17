@@ -31,6 +31,10 @@ public class Triangle extends Shape {
         return a + b + c;
     }
 
+    public boolean checkTriangle() {
+        return a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b;
+    }
+
     public double getA() {
         return a;
     }
