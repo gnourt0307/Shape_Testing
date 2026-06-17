@@ -30,7 +30,34 @@ public class Circle extends Shape {
     }
 
     public boolean checkCircle() {
-        return radius > 0;
+        if (Double.isNaN(radius)) {
+            return false;
+        }
+        if (Double.isInfinite(radius)) {
+            return false;
+        }
+        if (radius <= 0) {
+            return false;
+        }
+        if (radius < Double.MIN_NORMAL) {
+            return false;
+        }
+        if (Double.isInfinite(getPerimeter())) {
+            return false;
+        }
+        if (getArea() == 0) {
+            return false;
+        }
+        if (Double.isInfinite(getArea())) {
+            return false;
+        }
+        if (getVolume() == 0) {
+            return false;
+        }
+        if (Double.isInfinite(getVolume())) {
+            return false;
+        }
+        return true;
     }
 
     public double getDiameter() {

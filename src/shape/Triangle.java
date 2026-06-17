@@ -47,7 +47,43 @@ public class Triangle extends Shape {
     }
 
     public boolean checkTriangle() {
-        return a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b;
+        if (Double.isNaN(a)) {
+            return false;
+        }
+        if (Double.isNaN(b)) {
+            return false;
+        }
+        if (Double.isNaN(c)) {
+            return false;
+        }
+        if (Double.isInfinite(a)) {
+            return false;
+        }
+        if (Double.isInfinite(b)) {
+            return false;
+        }
+        if (Double.isInfinite(c)) {
+            return false;
+        }
+        if (a <= 0) {
+            return false;
+        }
+        if (b <= 0) {
+            return false;
+        }
+        if (c <= 0) {
+            return false;
+        }
+        if (a + b <= c) {
+            return false;
+        }
+        if (b + c <= a) {
+            return false;
+        }
+        if (a + c <= b) {
+            return false;
+        }
+        return true;
     }
 
     public String getType() {
@@ -57,10 +93,44 @@ public class Triangle extends Shape {
         if (a == b && b == c) {
             return "Equilateral";
         }
-        if (a == b || b == c || a == c) {
-            return "Isosceles";
+
+        boolean isIsosceles = a == b || b == c || a == c;
+        double longest = a;
+        double side1 = b;
+        double side2 = c;
+
+        if (b > longest) {
+            longest = b;
+            side1 = a;
+            side2 = c;
         }
-        return "Scalene";
+        if (c > longest) {
+            longest = c;
+            side1 = a;
+            side2 = b;
+        }
+
+        double longestSquare = longest * longest;
+        double otherSquares = side1 * side1 + side2 * side2;
+
+        if (Math.abs(longestSquare - otherSquares) < 0.0001) {
+            if (isIsosceles) {
+                return "Right Isosceles";
+            }
+            return "Right Scalene";
+        }
+
+        if (longestSquare > otherSquares) {
+            if (isIsosceles) {
+                return "Obtuse Isosceles";
+            }
+            return "Obtuse Scalene";
+        }
+
+        if (isIsosceles) {
+            return "Acute Isosceles";
+        }
+        return "Acute Scalene";
     }
 
     public double getA() {

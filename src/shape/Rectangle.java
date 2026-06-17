@@ -39,7 +39,34 @@ public class Rectangle extends Shape {
     }
 
     public boolean checkRectangle() {
-        return width > 0 && length > 0 && height > 0;
+        if (Double.isNaN(width)) {
+            return false;
+        }
+        if (Double.isNaN(length)) {
+            return false;
+        }
+        if (Double.isNaN(height)) {
+            return false;
+        }
+        if (Double.isInfinite(width)) {
+            return false;
+        }
+        if (Double.isInfinite(length)) {
+            return false;
+        }
+        if (Double.isInfinite(height)) {
+            return false;
+        }
+        if (width <= 0) {
+            return false;
+        }
+        if (length <= 0) {
+            return false;
+        }
+        if (height <= 0) {
+            return false;
+        }
+        return true;
     }
 
     public double getDiagonal() {

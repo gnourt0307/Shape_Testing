@@ -42,6 +42,12 @@ public class RectangleTest {
 
     @Test
     public void testCheckRectangleFalse() {
+        assertFalse(new Rectangle(Double.NaN, 5, 1).checkRectangle());
+        assertFalse(new Rectangle(4, Double.NaN, 1).checkRectangle());
+        assertFalse(new Rectangle(4, 5, Double.NaN).checkRectangle());
+        assertFalse(new Rectangle(Double.POSITIVE_INFINITY, 5, 1).checkRectangle());
+        assertFalse(new Rectangle(4, Double.POSITIVE_INFINITY, 1).checkRectangle());
+        assertFalse(new Rectangle(4, 5, Double.POSITIVE_INFINITY).checkRectangle());
         assertFalse(new Rectangle(0, 5).checkRectangle());
         assertFalse(new Rectangle(4, 0).checkRectangle());
         assertFalse(new Rectangle(4, 5, 0).checkRectangle());

@@ -43,6 +43,12 @@ public class TriangleTest {
 
     @Test
     public void testCheckTriangleFalse() {
+        assertFalse(new Triangle(Double.NaN, 4, 5).checkTriangle());
+        assertFalse(new Triangle(3, Double.NaN, 5).checkTriangle());
+        assertFalse(new Triangle(3, 4, Double.NaN).checkTriangle());
+        assertFalse(new Triangle(Double.POSITIVE_INFINITY, 4, 5).checkTriangle());
+        assertFalse(new Triangle(3, Double.POSITIVE_INFINITY, 5).checkTriangle());
+        assertFalse(new Triangle(3, 4, Double.POSITIVE_INFINITY).checkTriangle());
         assertFalse(new Triangle(0, 4, 5).checkTriangle());
         assertFalse(new Triangle(3, 0, 5).checkTriangle());
         assertFalse(new Triangle(3, 4, 0).checkTriangle());
@@ -54,11 +60,19 @@ public class TriangleTest {
     @Test
     public void testGetType() {
         assertEquals("Equilateral", new Triangle(3, 3, 3).getType());
-        assertEquals("Isosceles", new Triangle(3, 3, 4).getType());
-        assertEquals("Isosceles", new Triangle(3, 4, 3).getType());
-        assertEquals("Isosceles", new Triangle(4, 3, 3).getType());
-        assertEquals("Scalene", triangle.getType());
-        assertEquals("Invalid", new Triangle(1, 2, 10).getType());
+        assertEquals("Acute Isosceles", new Triangle(3, 3, 4).getType());
+        assertEquals("Acute Isosceles", new Triangle(3, 4, 3).getType());
+        assertEquals("Acute Isosceles", new Triangle(4, 3, 3).getType());
+        assertEquals("Acute Scalene", new Triangle(4, 5, 6).getType());
+        assertEquals("Right Scalene", new Triangle(5, 3, 4).getType());
+        assertEquals("Right Scalene", new Triangle(3, 5, 4).getType());
+        assertEquals("Right Scalene", new Triangle(3, 4, 5).getType());
+        assertEquals("Right Isosceles", new Triangle(1, 1, Math.sqrt(2)).getType());
+        assertEquals("Obtuse Scalene", new Triangle(6, 4, 3).getType());
+        assertEquals("Obtuse Isosceles", new Triangle(5, 5, 8).getType());
+        assertEquals("Invalid", new Triangle(1, 3, 10).getType());
+        assertEquals("Invalid", new Triangle(0, 3, 5).getType());
+        assertEquals("Invalid", new Triangle(3, -1, 4).getType());
     }
 
     @Test

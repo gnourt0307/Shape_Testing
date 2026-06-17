@@ -41,8 +41,16 @@ public class CircleTest {
 
     @Test
     public void testCheckCircleFalse() {
+        assertFalse(new Circle(Double.NaN).checkCircle());
+        assertFalse(new Circle(Double.POSITIVE_INFINITY).checkCircle());
         assertFalse(new Circle(0).checkCircle());
         assertFalse(new Circle(-2).checkCircle());
+        assertFalse(new Circle(Double.MIN_VALUE).checkCircle());
+        assertFalse(new Circle(Double.MAX_VALUE).checkCircle());
+        assertFalse(new Circle(1.0E-200).checkCircle());
+        assertFalse(new Circle(1.0E154).checkCircle());
+        assertFalse(new Circle(1.0E-110).checkCircle());
+        assertFalse(new Circle(1.0E103).checkCircle());
     }
 
     @Test

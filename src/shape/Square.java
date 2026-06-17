@@ -31,7 +31,34 @@ public class Square extends Shape {
     }
 
     public boolean checkSquare() {
-        return side > 0;
+        if (Double.isNaN(side)) {
+            return false;
+        }
+        if (Double.isInfinite(side)) {
+            return false;
+        }
+        if (side <= 0) {
+            return false;
+        }
+        if (side < Double.MIN_NORMAL) {
+            return false;
+        }
+        if (Double.isInfinite(getPerimeter())) {
+            return false;
+        }
+        if (getArea() == 0) {
+            return false;
+        }
+        if (Double.isInfinite(getArea())) {
+            return false;
+        }
+        if (getVolume() == 0) {
+            return false;
+        }
+        if (Double.isInfinite(getVolume())) {
+            return false;
+        }
+        return true;
     }
 
     public double getDiagonal() {

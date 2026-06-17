@@ -41,8 +41,16 @@ public class SquareTest {
 
     @Test
     public void testCheckSquareFalse() {
+        assertFalse(new Square(Double.NaN).checkSquare());
+        assertFalse(new Square(Double.POSITIVE_INFINITY).checkSquare());
         assertFalse(new Square(0).checkSquare());
         assertFalse(new Square(-4).checkSquare());
+        assertFalse(new Square(Double.MIN_VALUE).checkSquare());
+        assertFalse(new Square(Double.MAX_VALUE).checkSquare());
+        assertFalse(new Square(1.0E-200).checkSquare());
+        assertFalse(new Square(1.0E155).checkSquare());
+        assertFalse(new Square(1.0E-110).checkSquare());
+        assertFalse(new Square(1.0E103).checkSquare());
     }
 
     @Test
