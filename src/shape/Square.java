@@ -24,34 +24,29 @@ public class Square {
         return side * side * side;
     }
 
+    public double getDiagonal() { return side * Math.sqrt(2);}
+
     public boolean checkSquare() {
         if (Double.isNaN(side)) {
             return false;
-        }
-        if (Double.isInfinite(side)) {
+        } else if (Double.isInfinite(side)) {
             return false;
-        }
-        if (side <= 0) {
+        } else if (side <= 0) {
             return false;
-        }
-        if (side < Double.MIN_NORMAL) {
+        } else if (Double.isInfinite(getPerimeter())) {
             return false;
-        }
-        if (Double.isInfinite(getPerimeter())) {
+        } else if (Double.isInfinite(getDiagonal())) {
             return false;
-        }
-        if (getArea() == 0) {
+        } else if (getArea() == 0) {
             return false;
-        }
-        if (Double.isInfinite(getArea())) {
+        } else if (Double.isInfinite(getArea())) {
             return false;
-        }
-        if (getVolume() == 0) {
+        } else if (getVolume() == 0) {
             return false;
-        }
-        if (Double.isInfinite(getVolume())) {
+        } else if (Double.isInfinite(getVolume())) {
             return false;
+        } else {
+            return true;
         }
-        return true;
     }
 }
